@@ -1,5 +1,5 @@
-import {  APP_ENV } from '@config';
-import { pino } from 'pino';
+import {APP_ENV} from '@config';
+import {pino} from 'pino';
 
 const appLogger = pino({
   transport:

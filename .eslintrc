@@ -11,6 +11,9 @@
     "sourceType": "module",
     "project": "tsconfig.json"
   },
+  "env": {
+    "node": true
+  },
   "rules": {
     "fp/no-events": 0,
     "import/no-cycle": 0,

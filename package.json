@@ -13,7 +13,8 @@
     "check-types": "tsc --noemit",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/ && npm run check-types",
     "lint:fix": "npm run lint --fix",
-    "generate-migrations": "drizzle-kit generate:pg"
+    "generate-migrations": "drizzle-kit generate:pg",
+    "migrate": "ts-node src/database/migrate"
   },
   "dependencies": {
     "@fastify/compress": "7.0.0",

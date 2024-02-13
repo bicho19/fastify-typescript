@@ -1,7 +1,8 @@
 import {CreateUser, GetUser} from '@components/user/user.interface';
 import {db} from '@/database';
-import {ServerError} from '@exceptions/error';
-import {User, users} from './user.model';
+import {NotFound, ServerError} from '@exceptions/error';
+import {User, users} from '@/database/models';
+import {eq} from 'drizzle-orm';
 
 class UserService {
   private saltRounds = 10;
@@ -16,15 +17,11 @@ class UserService {
   }
 
   public async getUser(getUserData: GetUser) {
-    // const findUser = await this.db.user.findUnique({
-    //   where: {
-    //     email: getUserData.email
-    //   }
-    // });
-    //
-    // if (!findUser) {
-    //   throw new NotFound('User not found');
-    // }
+    const findUser = await db.select().from(users).where(eq(users.fullName, getUserData.email));
+
+    if (!findUser) {
+      throw new NotFound('User not found');
+    }
 
     return {};
   }
