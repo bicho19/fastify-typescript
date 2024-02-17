@@ -141,6 +141,7 @@
     "prefer-template": ["error"],
     "template-curly-spacing": ["error", "never"],
     // Custom rules here
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "new-cap": "off"
   }
 }
